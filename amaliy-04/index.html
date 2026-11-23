@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dasturlash atamalari lug'ati - asosiy tushunchalar, interaktiv katalog va IT o'quv modullari.">
+    <title>Dasturlash Atamalari Lug'ati | Bosh sahifa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="yuqori">
+    <header class="sayt-sarlavha">
+        <div class="konteyner">
+            <h1>Dasturlash Atamalari Lug'ati</h1>
+            <p class="sarlavha-ost">Urganch davlat universiteti Dasturiy injiniring yo'nalishi talabalari uchun interaktiv IT qo'llanma</p>
+        </div>
+    </header>
+
+    <nav class="asosiy-menyu">
+        <a href="index.html" class="brend-nomi">IT Lug'at &middot; UrDU</a>
+        <div class="nav-amallar">
+            <a href="katalog.html" class="sevimli-yorliq" title="Sevimli modullar">★ <span id="sevimli-soni">0</span></a>
+            <button type="button" id="mavzu-tugma" class="mavzu-tugma">☾ Tungi rejim</button>
+            <button type="button" id="mobil-menyu-tugma" class="hamburger-tugma" aria-expanded="false" aria-label="Menyuni ochish">☰</button>
+        </div>
+        <ul id="nav-royxat">
+            <li><a href="index.html" class="faol">Bosh sahifa</a></li>
+            <li><a href="katalog.html">Atamalar katalogi</a></li>
+            <li><a href="aloqa.html">Aloqa va ro'yxatdan o'tish</a></li>
+        </ul>
+    </nav>
+
+    <main class="konteyner">
+        <section>
+            <h2>Eng ko'p ishlatiladigan dasturlash atamalari</h2>
+            <p>Dasturlash olamida ko'plab <strong>maxsus so'zlar</strong> va <em>texnik iboralar</em> mavjud. Ularni aniq tushunish har bir bo'lajak dasturchi uchun muvaffaqiyat poydevoridir.</p>
+            <p>Eng muhim tushunchalardan biri bu <mark>Algoritm</mark> bo'lib, u muammoni hal qilish uchun aniq buyruqlar ketma-ketligini bildiradi. Endilikda saytimizda barcha atama va o'quv modullarini <strong>JavaScript orqali qidirish, filtrlash va saralash</strong> imkoniyati qo'shildi.</p>
+
+            <div class="kartalar-qatori">
+                <article class="karta">
+                    <span class="karta-belgi">Yangi</span>
+                    <h3>O'zgaruvchi (Variable)</h3>
+                    <p>Kompyuter xotirasida ma'lum bir qiymatni (son, matn yoki mantiqiy belgi) vaqtincha saqlash uchun nomlangan xotira katagi.</p>
+                    <p><strong>Misol:</strong> JavaScript'da <code>const talabaYoshi = 20;</code> ko'rinishida e'lon qilinadi.</p>
+                </article>
+
+                <article class="karta">
+                    <span class="karta-belgi yashil">Muhim</span>
+                    <h3>Funksiya (Function)</h3>
+                    <p>Muayyan vazifani bajaradigan, nomlangan va dasturning istalgan joyida qayta chaqirib ishlatish mumkin bo'lgan mustaqil kod bloki.</p>
+                    <p><strong>Afzalligi:</strong> Kod takrorlanishining (DRY prinsipi) oldini oladi.</p>
+                </article>
+
+                <article class="karta">
+                    <span class="karta-belgi kok">Asosiy</span>
+                    <h3>Massiv (Array)</h3>
+                    <p>Bir nechta qiymatlarni tartiblangan ro'yxat ichida saqlaydigan ma'lumotlar tuzilmasi. <code>map</code>, <code>filter</code>, <code>reduce</code> kabi metodlarga ega.</p>
+                    <p><strong>Qo'llanilishi:</strong> Katalogdagi 12 ta modulni dinamik chiqarishda.</p>
+                </article>
+            </div>
+        </section>
+
+        <aside class="yon-eslatma">
+            <h3>Muallif haqida qisqacha</h3>
+            <p><strong>Suxrob Qo'ziboyev</strong> &mdash; Urganch davlat universiteti Dasturiy injiniring yo'nalishi (941-24 guruh) talabasi. Python, Java, Django va JavaScript texnologiyalarini chuqur o'rganmoqda.</p>
+        </aside>
+
+        <section>
+            <h2>Dasturlash arxitekturasi va sxemalar</h2>
+            <div class="media-qatori">
+                <figure class="rasm-karta">
+                    <img src="rasmlar/algoritm-sxemasi.png" alt="Algoritmning kirish, qayta ishlash va natija bosqichlari blok-sxemasi" width="640" height="360">
+                    <figcaption>1-rasm. Har qanday dasturiy algoritmning 3 ta asosiy ishlash bosqichi.</figcaption>
+                </figure>
+
+                <figure class="rasm-karta">
+                    <img src="rasmlar/js-dom.png" alt="JavaScript DOM daraxti va hodisalar bilan ishlash sxemasi" width="640" height="360">
+                    <figcaption>2-rasm. JavaScript orqali DOM elementlarni xavfsiz yaratish va hodisalarni boshqarish.</figcaption>
+                </figure>
+            </div>
+
+            <div class="markaz-chaqiriq">
+                <h3>Interaktiv atamalar katalogini sinab ko'ring!</h3>
+                <p>12 ta dasturlash moduli orasidan qidiruv, kategoriya filtri, saralash va sevimlilar ro'yxati bilan tanishing.</p>
+                <a href="katalog.html" class="tugma-havola">Katalog sahifasiga o'tish</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="aloqa">
+        <div class="konteyner">
+            <div class="footer-ustunlar">
+                <div class="footer-ustun">
+                    <h3>Loyiha haqida</h3>
+                    <p>Ushbu portal Urganch davlat universiteti Dasturiy injiniring yo'nalishi (941-24 guruh) talabasi Suxrob Qo'ziboyev tomonidan yaratilgan.</p>
+                </div>
+                <div class="footer-ustun">
+                    <h3>Tezkor sahifalar</h3>
+                    <p><a href="index.html">Bosh sahifa</a> &middot; <a href="katalog.html">Atamalar katalogi</a> &middot; <a href="aloqa.html">Ro'yxatdan o'tish</a></p>
+                    <p>Manzil: Urganch shahri, Hamid Olimjon ko'chasi, 14-uy.</p>
+                </div>
+                <div class="footer-ustun">
+                    <h3>Biz bilan bog'lanish</h3>
+                    <p>Elektron pochta: <a href="mailto:info@urdu.uz">info@urdu.uz</a></p>
+                    <p>Telefon: <a href="tel:+998991234567">+998 99 123 45 67</a></p>
+                </div>
+            </div>
+            <div class="footer-pastki">
+                <p>&copy; 2026 Dasturlash Atamalari Lug'ati. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#yuqori" class="yuqoriga-tugma">&uarr; Yuqoriga</a>
+
+    <script src="js/ui.js"></script>
+</body>
+</html>

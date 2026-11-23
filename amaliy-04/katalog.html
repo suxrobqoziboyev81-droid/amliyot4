@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dasturlash atamalari va o'quv modullari interaktiv katalogi: qidiruv, filtr, saralash va modal oyna.">
+    <title>Atamalar Katalogi | Dasturlash Atamalari Lug'ati</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="yuqori">
+    <header class="sayt-sarlavha">
+        <div class="konteyner">
+            <h1>Atamalar va O'quv Modullari Katalogi</h1>
+            <p class="sarlavha-ost">JavaScript DOM, qidiruv, kategoriya filtri, saralash va sevimlilar bilan dinamik boshqaruv</p>
+        </div>
+    </header>
+
+    <nav class="asosiy-menyu">
+        <a href="index.html" class="brend-nomi">IT Lug'at &middot; UrDU</a>
+        <div class="nav-amallar">
+            <a href="katalog.html" class="sevimli-yorliq" title="Sevimli modullar">★ <span id="sevimli-soni">0</span></a>
+            <button type="button" id="mavzu-tugma" class="mavzu-tugma">☾ Tungi rejim</button>
+            <button type="button" id="mobil-menyu-tugma" class="hamburger-tugma" aria-expanded="false" aria-label="Menyuni ochish">☰</button>
+        </div>
+        <ul id="nav-royxat">
+            <li><a href="index.html">Bosh sahifa</a></li>
+            <li><a href="katalog.html" class="faol">Atamalar katalogi</a></li>
+            <li><a href="aloqa.html">Aloqa va ro'yxatdan o'tish</a></li>
+        </ul>
+    </nav>
+
+    <main class="konteyner">
+        <!-- A4. Statistika bloki (reduce va find bilan to'ldiriladi) -->
+        <section aria-label="Katalog statistikasi">
+            <h2>Katalog statistikasi</h2>
+            <div class="statistika-qatori">
+                <div class="stat-karta">
+                    <p class="stat-sarlavha">Jami modullar soni</p>
+                    <p class="stat-qiymat" id="stat-jami">0 ta</p>
+                </div>
+                <div class="stat-karta">
+                    <p class="stat-sarlavha">O'rtacha modul narxi</p>
+                    <p class="stat-qiymat" id="stat-ortacha">0 so'm</p>
+                </div>
+                <div class="stat-karta">
+                    <p class="stat-sarlavha">Eng qimmat modul</p>
+                    <p class="stat-qiymat" id="stat-qimmat">&mdash;</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- B2, B3, B4. Qidiruv, kategoriya filtri va saralash paneli -->
+        <section>
+            <h2>Modullarni qidirish va saralash</h2>
+            <div class="boshqaruv-paneli">
+                <div class="panel-guruh">
+                    <label for="qidiruv-input">Nom bo'yicha qidiruv:</label>
+                    <input type="search" id="qidiruv-input" placeholder="Masalan: JavaScript, Python, SQL...">
+                </div>
+
+                <div class="panel-guruh">
+                    <label for="kategoriya-filtr">Kategoriya bo'yicha filtr:</label>
+                    <select id="kategoriya-filtr">
+                        <option value="barchasi">Barcha kategoriyalar</option>
+                    </select>
+                </div>
+
+                <div class="panel-guruh">
+                    <label for="saralash-tanlov">Saralash tartibi:</label>
+                    <select id="saralash-tanlov">
+                        <option value="standart">Standart tartib</option>
+                        <option value="narx-osish">Narx: arzonidan qimmatiga</option>
+                        <option value="narx-kamayish">Narx: qimmatidan arzoniga</option>
+                        <option value="nom-alifbo">Nom bo'yicha (A &ndash; Z)</option>
+                    </select>
+                </div>
+
+                <button type="button" id="filtr-tozalash" class="tugma-ikkinchi">Filtrlarni tozalash</button>
+            </div>
+
+            <div class="panel-pastki">
+                <p id="natija-soni" class="natija-soni">Ko'rsatilmoqda: 0 ta element</p>
+                <div class="tanlov-band">
+                    <input type="checkbox" id="faqat-sevimli">
+                    <label for="faqat-sevimli">Faqat sevimlilarni ko'rsatish (★)</label>
+                </div>
+            </div>
+
+            <!-- Kartalar JS orqali createElement bilan shu yerga yaratiladi -->
+            <div id="katalog-konteyner" class="kartalar-qatori"></div>
+        </section>
+    </main>
+
+    <!-- C1. Modal oyna -->
+    <div id="batafsil-modal" class="modal-fon" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-sarlavha">
+        <div class="modal-quti">
+            <button type="button" id="modal-yopish" class="modal-yopish" aria-label="Modalni yopish">&times;</button>
+            <img id="modal-rasm" class="modal-rasm" src="rasmlar/veb-arxitektura.png" alt="Modul rasmi">
+            <p id="modal-kategoriya" class="karta-meta"></p>
+            <h2 id="modal-sarlavha"></h2>
+            <p id="modal-narx" class="karta-narx"></p>
+            <p id="modal-holat"></p>
+            <p id="modal-izoh"></p>
+            <div id="modal-teglar" class="teglar-quti"></div>
+        </div>
+    </div>
+
+    <footer id="aloqa">
+        <div class="konteyner">
+            <div class="footer-ustunlar">
+                <div class="footer-ustun">
+                    <h3>Loyiha haqida</h3>
+                    <p>Ushbu portal Urganch davlat universiteti Dasturiy injiniring yo'nalishi (941-24 guruh) talabasi Suxrob Qo'ziboyev tomonidan yaratilgan.</p>
+                </div>
+                <div class="footer-ustun">
+                    <h3>Tezkor sahifalar</h3>
+                    <p><a href="index.html">Bosh sahifa</a> &middot; <a href="katalog.html">Atamalar katalogi</a> &middot; <a href="aloqa.html">Ro'yxatdan o'tish</a></p>
+                    <p>Manzil: Urganch shahri, Hamid Olimjon ko'chasi, 14-uy.</p>
+                </div>
+                <div class="footer-ustun">
+                    <h3>Biz bilan bog'lanish</h3>
+                    <p>Elektron pochta: <a href="mailto:info@urdu.uz">info@urdu.uz</a></p>
+                    <p>Telefon: <a href="tel:+998991234567">+998 99 123 45 67</a></p>
+                </div>
+            </div>
+            <div class="footer-pastki">
+                <p>&copy; 2026 Dasturlash Atamalari Lug'ati. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#yuqori" class="yuqoriga-tugma">&uarr; Yuqoriga</a>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/katalog.js"></script>
+</body>
+</html>

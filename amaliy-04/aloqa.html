@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dasturlash atamalari lug'atiga yangi atama qo'shish va IT o'quv kurslariga yozilish formasi (JS tekshiruvi bilan).">
+    <title>Aloqa va Ro'yxatdan O'tish | Dasturlash Atamalari Lug'ati</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="yuqori">
+    <header class="sayt-sarlavha">
+        <div class="konteyner">
+            <h1>Aloqa va Kursga Ro'yxatdan O'tish</h1>
+            <p class="sarlavha-ost">JavaScript yordamida real vaqtda tekshiriladigan onlayn ariza formasi</p>
+        </div>
+    </header>
+
+    <nav class="asosiy-menyu">
+        <a href="index.html" class="brend-nomi">IT Lug'at &middot; UrDU</a>
+        <div class="nav-amallar">
+            <a href="katalog.html" class="sevimli-yorliq" title="Sevimli modullar">★ <span id="sevimli-soni">0</span></a>
+            <button type="button" id="mavzu-tugma" class="mavzu-tugma">☾ Tungi rejim</button>
+            <button type="button" id="mobil-menyu-tugma" class="hamburger-tugma" aria-expanded="false" aria-label="Menyuni ochish">☰</button>
+        </div>
+        <ul id="nav-royxat">
+            <li><a href="index.html">Bosh sahifa</a></li>
+            <li><a href="katalog.html">Atamalar katalogi</a></li>
+            <li><a href="aloqa.html" class="faol">Aloqa va ro'yxatdan o'tish</a></li>
+        </ul>
+    </nav>
+
+    <main class="konteyner">
+        <section>
+            <h2>O'quv guruhiga yozilish va atama yuborish arizasi</h2>
+            <p>Quyidagi formani to'ldiring. Yuborish tugmasi bosilganda barcha maydonlar JavaScript orqali tekshiriladi va xatolik bo'lsa, har bir maydon ostida aniq ko'rsatiladi.</p>
+
+            <div class="forma-karta">
+                <form id="ariza-forma" action="#" method="post" class="ariza-forma" novalidate>
+                    <div id="forma-muvaffaqiyat" class="muvaffaqiyat-xabar" role="status"></div>
+
+                    <div class="forma-ikkilik">
+                        <div class="forma-guruh">
+                            <label for="ism">1. To'liq ism-sharifingiz (F.I.Sh.): *</label>
+                            <input type="text" id="ism" name="talaba_ismi" placeholder="Masalan: Suxrob Qo'ziboyev">
+                            <span id="xato-ism" class="xato-matn"></span>
+                        </div>
+
+                        <div class="forma-guruh">
+                            <label for="pochta">2. Elektron pochta manzilingiz: *</label>
+                            <input type="email" id="pochta" name="elektron_pochta" placeholder="talaba@urdu.uz">
+                            <span id="xato-pochta" class="xato-matn"></span>
+                        </div>
+                    </div>
+
+                    <div class="forma-ikkilik">
+                        <div class="forma-guruh">
+                            <label for="telefon">3. Telefon raqamingiz (+998XXXXXXXXX): *</label>
+                            <input type="tel" id="telefon" name="telefon_raqami" placeholder="+998991234567">
+                            <span id="xato-telefon" class="xato-matn"></span>
+                        </div>
+
+                        <div class="forma-guruh">
+                            <label for="bosqich">4. O'qiyotgan bosqichingiz (1&ndash;4): *</label>
+                            <input type="number" id="bosqich" name="talaba_bosqichi" min="1" max="4" value="2">
+                            <span id="xato-bosqich" class="xato-matn"></span>
+                        </div>
+                    </div>
+
+                    <div class="forma-ikkilik">
+                        <div class="forma-guruh">
+                            <label for="sana">5. Mashg'ulotlarni boshlash sanasi: *</label>
+                            <input type="date" id="sana" name="boshlash_sanasi">
+                            <span id="xato-sana" class="xato-matn"></span>
+                        </div>
+
+                        <div class="forma-guruh">
+                            <label for="yonalish">6. Dasturlash yo'nalishini tanlang:</label>
+                            <select id="yonalish" name="tanlangan_yonalish">
+                                <option value="frontend">Frontend (HTML5, CSS3, JavaScript)</option>
+                                <option value="backend_python">Backend (Python va Django)</option>
+                                <option value="backend_java">Korporativ dasturlash (Java Core)</option>
+                                <option value="database_sql">Ma'lumotlar bazasi (PostgreSQL)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>7. Dasturlash bo'yicha bilim darajangiz:</legend>
+                        <div class="tanlov-qatori">
+                            <div class="tanlov-band">
+                                <input type="radio" id="daraja_boshlangich" name="bilim_darajasi" value="boshlangich" checked>
+                                <label for="daraja_boshlangich">Boshlang'ich</label>
+                            </div>
+                            <div class="tanlov-band">
+                                <input type="radio" id="daraja_orta" name="bilim_darajasi" value="orta">
+                                <label for="daraja_orta">O'rta</label>
+                            </div>
+                            <div class="tanlov-band">
+                                <input type="radio" id="daraja_yuqori" name="bilim_darajasi" value="yuqori">
+                                <label for="daraja_yuqori">Yuqori</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="forma-guruh">
+                        <label for="xabar">8. Taklif etilayotgan atama izohi yoki savolingiz (kamida 10 belgi): *</label>
+                        <textarea id="xabar" name="atama_yoki_savol" rows="4" placeholder="Lug'atga qo'shmoqchi bo'lgan atamangiz yoki savolingizni yozing..."></textarea>
+                        <span id="xato-xabar" class="xato-matn"></span>
+                    </div>
+
+                    <div class="forma-guruh">
+                        <div class="tanlov-band">
+                            <input type="checkbox" id="rozilik" name="qoidalar_roziligi" value="rozi">
+                            <label for="rozilik">Kiritilgan ma'lumotlarning to'g'riligini tasdiqlayman *</label>
+                        </div>
+                        <span id="xato-rozilik" class="xato-matn"></span>
+                    </div>
+
+                    <button type="submit">Arizani yuborish</button>
+                </form>
+            </div>
+        </section>
+
+        <aside class="yon-eslatma">
+            <h3>Qabul va maslahat vaqtlari</h3>
+            <p>Kafedra manzili: Urganch shahri, Hamid Olimjon ko'chasi, 14-uy, Axborot texnologiyalari fakulteti. Dushanba&ndash;Shanba, 09:00&ndash;17:00.</p>
+        </aside>
+    </main>
+
+    <footer id="aloqa">
+        <div class="konteyner">
+            <div class="footer-ustunlar">
+                <div class="footer-ustun">
+                    <h3>Loyiha haqida</h3>
+                    <p>Ushbu portal Urganch davlat universiteti Dasturiy injiniring yo'nalishi (941-24 guruh) talabasi Suxrob Qo'ziboyev tomonidan yaratilgan.</p>
+                </div>
+                <div class="footer-ustun">
+                    <h3>Tezkor sahifalar</h3>
+                    <p><a href="index.html">Bosh sahifa</a> &middot; <a href="katalog.html">Atamalar katalogi</a> &middot; <a href="aloqa.html">Ro'yxatdan o'tish</a></p>
+                    <p>Manzil: Urganch shahri, Hamid Olimjon ko'chasi, 14-uy.</p>
+                </div>
+                <div class="footer-ustun">
+                    <h3>Biz bilan bog'lanish</h3>
+                    <p>Elektron pochta: <a href="mailto:info@urdu.uz">info@urdu.uz</a></p>
+                    <p>Telefon: <a href="tel:+998991234567">+998 99 123 45 67</a></p>
+                </div>
+            </div>
+            <div class="footer-pastki">
+                <p>&copy; 2026 Dasturlash Atamalari Lug'ati. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#yuqori" class="yuqoriga-tugma">&uarr; Yuqoriga</a>
+
+    <script src="js/ui.js"></script>
+</body>
+</html>
